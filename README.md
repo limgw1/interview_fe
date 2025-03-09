@@ -51,6 +51,7 @@ The Front-End is deployed on GitHub Pages due to its simplicity. The only requir
 
 ## Backend Deployment
 The Back-End is deployed on Heroku due to its simplicity to set up. This was chosen over alternatives like hosting the application on a cloud service like AWS EC2, which is expensive and requires significantly more time to set up.
+> The usage of Heroku also allows for the easy implementation of env variables, which I use to store the OpenAI API key, the only API that costs money in the use case.
 
 ---
 
