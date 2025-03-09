@@ -1,4 +1,18 @@
-# Part 1 - Frameworks and Libraries
+# Part 1 - How to Use The Application
+
+## Chatbot
+The Chatbot is able to answer questions regarding
+- Top 5 nearest branch locations to a certain place ("Which branches are the closest to Bangsar?", "Where are the locations closest to Queensbay Mall, Penang?")
+- Earliest / Latest Opening / Closing hours today ("Which branch(es) close the earliest today?", "Which branch closes the latest today?")
+
+## Map
+The pins of the map are clickable, doing so will open a popup which shows
+- Name of the branch
+- Address of the branch
+- Opening Hours of the branch
+- Number of intersections that the branch has
+
+# Part 2 - Frameworks and Libraries
 
 ## Frontend - React
 I have chosen to build the Front-End in React. This is due to my familiarity with React as well as its popularity, which results in it being widely supported. Furthermore, React applications are easy to deploy to GitHub Pages.
@@ -14,7 +28,7 @@ As LLMs are random in nature and it is hard to force an output, Microsoft’s Gu
 FastAPI was used as it is easy to set up and lightweight. Personally, having the backend API in Python is beneficial for me because I like to use `breakpoint()` to debug code by running them line by line. Alternatively, Node.js could have been used as well, but I am more familiar with FastAPI.
 
 ## Backend (Scraper) - Selenium
-The Scraper was written with Selenium, which allows for the code to interact with a headless browser. This is preferred over BeautifulSoup as the Subway website is dynamically generated with JavaScript and requires interaction with certain input boxes in the website.
+The Scraper was written with Selenium, which allows for the code to interact with a headless browser. This is preferred over BeautifulSoup as the Subway website is dynamically generated with JavaScript and requires interaction with certain input boxes in the website. The opening and closing hours are parsed with a mixture of regex and LLMs. This is because I believe that the opening and closing hours should be stored , called and compared with logic in code to ensure 100% correctness of comparisons as LLMs tend to hallucinate, even with RAG improvements.
 
 ## Backend (DB) - SQLite3
 SQLite was chosen because it requires no extra setup for the database. It only requires an import of an extra Python package. Should the application require a more robust database, then the choice for a relational DB would be MySQL or PostgreSQL, while non-relational DBs would be MongoDB.
@@ -24,13 +38,13 @@ GeoAPIfy was used to geolocate a user’s intent (e.g., if a user asked for the 
 
 ---
 
-# Part 2 - Architecture
+# Part 3 - Architecture
 Due to the usage of FastAPI, the application naturally follows a microservices architecture. The following image describes the architecture of the application. 
 ![Design Architecture](https://i.ibb.co/35rHmYd4/image.png)
 
 ---
 
-# Part 3 - Deployment
+# Part 4 - Deployment
 
 ## Frontend Deployment
 The Front-End is deployed on GitHub Pages due to its simplicity. The only requirement is to install an npm package and run a specific npm script to deploy.
@@ -40,7 +54,7 @@ The Back-End is deployed on Heroku due to its simplicity to set up. This was cho
 
 ---
 
-# Part 4 - Considerations and Further Improvements
+# Part 5 - Considerations and Further Improvements
 
 > **Disclaimer:** As this is just a Proof of Concept (POC) Project, factors like scalability in both infrastructure and functionality are not considered. 
 
