@@ -26,7 +26,7 @@ GeoAPIfy was used to geolocate a user’s intent (e.g., if a user asked for the 
 
 # Part 2 - Architecture
 Due to the usage of FastAPI, the application naturally follows a microservices architecture. The following image describes the architecture of the application. 
-![Design Architecture](https://ibb.co/Y4RGBTQP)
+![Design Architecture](https://i.ibb.co/35rHmYd4/image.png)
 
 ---
 
@@ -43,6 +43,9 @@ The Back-End is deployed on Heroku due to its simplicity to set up. This was cho
 # Part 4 - Considerations and Further Improvements
 
 > **Disclaimer:** As this is just a Proof of Concept (POC) Project, factors like scalability in both infrastructure and functionality are not considered. 
+
+## Recommendations for changes in scope of project
+1. As the KL Area has too many overlapping Subway branches, there is no business benefit to see which branches have no or one intersection. The circles should also vary in size based on population density. Due to this, the opacity of the catchment area is set very low to avoid the map behind being completely obscured.
 
 ## Local LLMs
 Local LLMs like Llama3.3, DeepSeek, and Grok can be implemented by leveraging Python packages like OLLaMa or HuggingFace Transformers. For a fully scalable solution, OLLaMa is recommended as it allows for implementing request queueing, key-value caching, fine-tuning, and quantization to either improve inference speed or enhance quality.
