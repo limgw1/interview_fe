@@ -10,7 +10,7 @@ The pins of the map are clickable, doing so will open a popup which shows
 - Name of the branch
 - Address of the branch
 - Opening Hours of the branch
-- Number of intersections that the branch has
+- Number of intersections that the branch has within a 5km radius
 
 # Part 2 - Frameworks and Libraries
 
