@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/interview_fe/static/css/main.4dfb20c9.css",
-    "main.js": "/interview_fe/static/js/main.0c78aa77.js",
+    "main.js": "/interview_fe/static/js/main.fd50fae2.js",
     "index.html": "/interview_fe/index.html",
     "main.4dfb20c9.css.map": "/interview_fe/static/css/main.4dfb20c9.css.map",
-    "main.0c78aa77.js.map": "/interview_fe/static/js/main.0c78aa77.js.map"
+    "main.fd50fae2.js.map": "/interview_fe/static/js/main.fd50fae2.js.map"
   },
   "entrypoints": [
     "static/css/main.4dfb20c9.css",
-    "static/js/main.0c78aa77.js"
+    "static/js/main.fd50fae2.js"
   ]
 }
