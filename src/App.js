@@ -5,14 +5,18 @@ import "leaflet/dist/leaflet.css"
 import L from 'leaflet';
 import Chatbot from './Chatbot';
 
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-    iconUrl: require('leaflet/dist/images/marker-icon.png'),
-    shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+const LeafIcon = L.Icon.extend({
+  options: {}
 });
 
+const blueIcon = new LeafIcon({
+    iconUrl:
+      "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+  }),
+  greenIcon = new LeafIcon({
+    iconUrl:
+      "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+  });
 
 function App() {
 
@@ -56,7 +60,7 @@ function SubwayMarker ({location}) {
   let cleanedArray = parsedArray.map(item => item.replace(/\\u([\dA-Fa-f]{4})/g, (match, code) => String.fromCharCode(parseInt(code, 16))))
 
   return(
-    <Marker position={[location.scrapedLat, location.scrapedLong]}>
+    <Marker position={[location.scrapedLat, location.scrapedLong]} icon={location.numIntersections?blueIcon:greenIcon}>
       <Popup>
         <h1>{location.name}</h1>
         <p>{location.address}</p>
@@ -66,9 +70,9 @@ function SubwayMarker ({location}) {
       </Popup>
       <Circle 
         center={{lat:location.scrapedLat, lng: location.scrapedLong}}
-        fillColor="lightblue"
-        fillOpacity={0.075}
-        color='blue'
+        fillColor={location.numIntersections?"lightblue":"lime"}
+        fillOpacity={0.1}
+        color={location.numIntersections?'blue':'green'}
         weight={1}
         radius={5000}/>
     </Marker>
